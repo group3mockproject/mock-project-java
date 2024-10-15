@@ -17,16 +17,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
+@Table(name = "account")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;  // ID tự tăng
+    private Long accountId;  // ID tự tăng
 
     @Column(nullable = false, length = 100, unique = true)
     private String username; // Tên đăng nhập
@@ -50,7 +50,7 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt; // Thời gian cập nhật lần cuối
 
-    @Column(nullable = true, columnDefinition = "bit default 0")
+    @Column(nullable = false, columnDefinition = "bit default 0")
     private Boolean delflag; // Cờ xóa (1 = đã xóa, 0 = chưa xóa)
 }
 
