@@ -22,9 +22,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf
-                .ignoringRequestMatchers("/api/**") // Bỏ qua CSRF cho các yêu cầu đến /api/**
-            )
+	        .cors() // Kích hoạt CORS
+	        .and()
+	        .csrf(csrf -> csrf
+	            .ignoringRequestMatchers("/api/**")
+	        )
             .authorizeHttpRequests(authorize -> authorize
 	    		 .requestMatchers("/admin/**").hasRole("ADMIN") // Chỉ Admin mới có quyền truy cập
 	             .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN") // Cả User và Admin đều truy cập được
