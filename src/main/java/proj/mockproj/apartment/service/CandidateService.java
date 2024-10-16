@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import proj.mockproj.apartment.model.Candidate;
-import proj.mockproj.apartment.responsitory.CandidateRepository;
+import proj.mockproj.apartment.respository.CandidateRepository;
 
 @Service
 public class CandidateService {

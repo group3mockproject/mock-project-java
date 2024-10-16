@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import proj.mockproj.apartment.model.User;
-import proj.mockproj.apartment.responsitory.UserRepository;
+import proj.mockproj.apartment.respository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -57,13 +57,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     // Tải user từ database theo username (phục vụ cho quá trình xác thực)
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+//		 Tìm User từ cơ sở dữ liệu
+       User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found: " + username);
+        }
+//  		 Chuyển đổi từ org.o7planning.project.model.User sang
+//  		 org.springframework.security.core.userdetails.User
+          return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
+                  .password(user.getPassword())
+                  .roles(user.getRole()) // Tùy chỉnh vai trò người dùng
+                  .build();
 
-        return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
-                .password(user.getPassword())
-                .roles(user.getRole()) // Đặt vai trò (role) của người dùng
-                .build();
-    }
+  	}
 
 }

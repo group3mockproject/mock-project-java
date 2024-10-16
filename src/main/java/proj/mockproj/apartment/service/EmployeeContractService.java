@@ -3,7 +3,7 @@ package proj.mockproj.apartment.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proj.mockproj.apartment.model.EmployeeContract;
-import proj.mockproj.apartment.responsitory.EmployeeContractRepository;
+import proj.mockproj.apartment.respository.EmployeeContractRepository;
 
 import java.util.List;
 import java.util.Optional;

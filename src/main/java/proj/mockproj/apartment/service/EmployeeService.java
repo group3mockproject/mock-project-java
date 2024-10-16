@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import proj.mockproj.apartment.model.Employee;
-import proj.mockproj.apartment.responsitory.EmployeeRepository;
+import proj.mockproj.apartment.respository.EmployeeRepository;
 
 @Service
 public class EmployeeService {

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import proj.mockproj.apartment.model.User;
-import proj.mockproj.apartment.responsitory.UserRepository;
+import proj.mockproj.apartment.respository.UserRepository;
 
 @Controller
 public class AuthController {

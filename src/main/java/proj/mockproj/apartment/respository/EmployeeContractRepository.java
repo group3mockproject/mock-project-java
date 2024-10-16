@@ -1,4 +1,4 @@
-package proj.mockproj.apartment.responsitory;
+package proj.mockproj.apartment.respository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

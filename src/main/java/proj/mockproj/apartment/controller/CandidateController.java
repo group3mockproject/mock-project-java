@@ -31,15 +31,7 @@ public class CandidateController {
     // Tạo mới một candidate
     @PostMapping
     public ResponseEntity<Candidate> createCandidate(@RequestBody Candidate candidate) {
-    	 Candidate candidate2 = new Candidate();
-         candidate.setFirstname("Alice");
-         candidate.setLastname("Smith");
-         candidate.setEmail("alice@example.com");
-         candidate.setPhone("123-456-7890");
-         candidate.setCv_image_url("http://example.com/cv/alice.jpg");
-         candidate.setEducation("Developer");
-         candidate.setStatus("false");
-        Candidate savedCandidate = candidateService.saveCandidate(candidate2);
+        Candidate savedCandidate = candidateService.saveCandidate(candidate);
         return ResponseEntity.ok(savedCandidate);
     }
 
