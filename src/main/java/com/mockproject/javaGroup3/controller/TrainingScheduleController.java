@@ -10,7 +10,7 @@ import com.mockproject.javaGroup3.service.TrainingScheduleService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/training-schedules")
+@RequestMapping("/api/v1/training-schedules")
 public class TrainingScheduleController {
 
     @Autowired

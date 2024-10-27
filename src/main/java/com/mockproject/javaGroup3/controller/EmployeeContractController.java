@@ -11,7 +11,7 @@ import com.mockproject.javaGroup3.model.EmployeeContract;
 import com.mockproject.javaGroup3.service.EmployeeContractService;
 
 @RestController
-@RequestMapping("/api/contracts")
+@RequestMapping("/api/v1/contracts")
 public class EmployeeContractController {
 
     @Autowired

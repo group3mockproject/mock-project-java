@@ -19,8 +19,7 @@ import com.mockproject.javaGroup3.model.Employee;
 import com.mockproject.javaGroup3.service.EmployeeService;
 
 @RestController
-@RequestMapping("/api/employees")
-@CrossOrigin(origins = "http://localhost:3000") // Allow requests from this specific origin
+@RequestMapping("/api/v1/employees")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
