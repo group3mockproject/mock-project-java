@@ -16,14 +16,14 @@ public interface EmployeeContractRepository extends JpaRepository<EmployeeContra
 
     Optional<EmployeeContract> findByIdAndDeletedFalse(Long contractId);
 
-    List<EmployeeContract> findByEmployee_IdAndDeletedFalse(Long employeeId);
+    List<EmployeeContract> findByEmployee_EmployeeIdAndDeletedFalse(Long employeeId);
 
     // Các phương thức tìm kiếm cho hợp đồng đã bị xóa
     List<EmployeeContract> findAllByDeletedTrue();
 
     Optional<EmployeeContract> findByIdAndDeletedTrue(Long contractId);
 
-    List<EmployeeContract> findByEmployee_IdAndDeletedTrue(Long employeeId);
+    List<EmployeeContract> findByEmployee_EmployeeIdAndDeletedTrue(Long employeeId);
 
     // Phương thức để xóa mềm hợp đồng
     default void softDelete(Long contractId) {
@@ -33,6 +33,6 @@ public interface EmployeeContractRepository extends JpaRepository<EmployeeContra
         });
     }
 
-    // Tìm kiếm hợp đồng theo tên nhân viên
-    List<EmployeeContract> findByEmployee_FirstnameContainingOrEmployee_LastnameContaining(String firstname, String lastname);
+    // Tìm kiếm hợp đồng theo tên nhân viên (sửa tên thuộc tính)
+    List<EmployeeContract> findByEmployee_FirstNameContainingOrEmployee_LastNameContaining(String firstName, String lastName);
 }

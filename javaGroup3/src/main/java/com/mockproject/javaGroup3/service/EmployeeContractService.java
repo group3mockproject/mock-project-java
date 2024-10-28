@@ -51,7 +51,7 @@ public class EmployeeContractService {
     }
 
     public List<EmployeeContract> getActiveContractsByEmployeeId(Long employeeId) {
-        return contractRepository.findByEmployee_IdAndDeletedFalse(employeeId);
+        return contractRepository.findByEmployee_EmployeeIdAndDeletedFalse(employeeId);
     }
 
     // Các phương thức lấy hợp đồng đã bị xóa
@@ -64,13 +64,13 @@ public class EmployeeContractService {
     }
 
     public List<EmployeeContract> getDeletedContractsByEmployeeId(Long employeeId) {
-        return contractRepository.findByEmployee_IdAndDeletedTrue(employeeId);
+        return contractRepository.findByEmployee_EmployeeIdAndDeletedTrue(employeeId);
     }
 
     public List<EmployeeContract> searchEmployeeContracts(String employeeName) {
         // Tìm kiếm hợp đồng theo tên nhân viên
         if (employeeName != null && !employeeName.isEmpty()) {
-            return contractRepository.findByEmployee_FirstnameContainingOrEmployee_LastnameContaining(employeeName, employeeName);
+            return contractRepository.findByEmployee_FirstNameContainingOrEmployee_LastNameContaining(employeeName, employeeName);
         }
         return contractRepository.findAll(); // Trả về tất cả nếu không có điều kiện tìm kiếm
     }

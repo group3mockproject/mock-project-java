@@ -45,7 +45,7 @@ public class EmployeeController {
 
     // Lấy employee theo ID
     @GetMapping("/{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable Integer id) {
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         Optional<Employee> employee = employeeService.findEmployeeById(id);
         return employee.map(ResponseEntity::ok)
                        .orElseGet(() -> ResponseEntity.notFound().build());
@@ -53,7 +53,7 @@ public class EmployeeController {
 
     // Cập nhật thông tin employee
     @PutMapping("/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id, @RequestBody Employee employeeDetails) {
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {
         Optional<Employee> updatedEmployee = employeeService.updateEmployee(id, employeeDetails);
         return updatedEmployee.map(ResponseEntity::ok)
                               .orElseGet(() -> ResponseEntity.notFound().build());
@@ -61,7 +61,7 @@ public class EmployeeController {
 
     // Xóa employee theo ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmployee(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
         return ResponseEntity.noContent().build();
     }

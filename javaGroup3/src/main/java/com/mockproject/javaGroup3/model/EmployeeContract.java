@@ -26,7 +26,7 @@ public class EmployeeContract {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employeeId", nullable = false)
     private Employee employee;
 
     @Column(name = "contract_start_date", nullable = false)
