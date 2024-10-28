@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.mockproject.javaGroup3.model.User;
-import com.mockproject.javaGroup3.respository.UserRepository;
+import com.mockproject.javaGroup3.repository.UserRepository;
 
 @Service
 public class UserService {

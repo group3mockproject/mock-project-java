@@ -14,12 +14,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Employee")
-public class Employee {
+@Table(name = "Resident")
+public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employee_id")
-    private Long employeeId;
+    @Column(name = "resident_id")
+    private Long residentId;
+
+    @ManyToOne
+    @JoinColumn(name = "apartment_id")
+    private Apartments apartment;
 
     @Column(name = "firstname")
     private String firstName;
@@ -27,11 +31,8 @@ public class Employee {
     @Column(name = "lastname")
     private String lastName;
 
-    @Column(name = "dob")
-    private java.util.Date dob;
-
-    @Column(name = "position")
-    private String position;
+    @Column(name = "date_of_birth")
+    private java.util.Date dateOfBirth;
 
     @Column(name = "email")
     private String email;
@@ -51,24 +52,12 @@ public class Employee {
     @Column(name = "delflag")
     private Boolean delFlag;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Building> buildings;
-
-    @OneToMany(mappedBy = "employee")
-    private List<Block> blocks;
-
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "resident")
     private List<MaintenanceRequests> maintenanceRequests;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Timekeeping> timekeepings;
+    @OneToMany(mappedBy = "resident")
+    private List<PaymentResident> payments;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Income> incomes;
-
-    @OneToMany(mappedBy = "employee")
-    private List<Outcome> outcomes;
-
-    @OneToMany(mappedBy = "employee")
-    private List<MaintenanceHistory> maintenanceHistories;
+    @OneToMany(mappedBy = "resident")
+    private List<ResidentUtilityUsage> utilityUsages;
 }

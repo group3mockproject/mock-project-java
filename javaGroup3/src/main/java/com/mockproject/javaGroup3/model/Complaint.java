@@ -1,4 +1,4 @@
-package com.mockproject.javaGroup3.entity;
+package com.mockproject.javaGroup3.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

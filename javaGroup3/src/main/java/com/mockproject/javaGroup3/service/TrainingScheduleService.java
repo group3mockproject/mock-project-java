@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mockproject.javaGroup3.model.TrainingSchedule;
-import com.mockproject.javaGroup3.respository.TrainingScheduleRepository;
+import com.mockproject.javaGroup3.repository.TrainingScheduleRepository;
 
 @Service
 public class TrainingScheduleService {

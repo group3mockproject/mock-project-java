@@ -10,7 +10,7 @@ import com.mockproject.javaGroup3.controller.dto.AuthenticationResponse;
 import com.mockproject.javaGroup3.controller.dto.RegisterRequest;
 import com.mockproject.javaGroup3.model.Role;
 import com.mockproject.javaGroup3.model.User;
-import com.mockproject.javaGroup3.respository.UserRepository;
+import com.mockproject.javaGroup3.repository.UserRepository;
 import com.mockproject.javaGroup3.util.JwtService;
 
 

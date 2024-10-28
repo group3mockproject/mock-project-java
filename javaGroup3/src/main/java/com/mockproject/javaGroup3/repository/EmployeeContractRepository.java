@@ -1,4 +1,4 @@
-package com.mockproject.javaGroup3.respository;
+package com.mockproject.javaGroup3.repository;
 
 import java.util.List;
 import java.util.Optional;

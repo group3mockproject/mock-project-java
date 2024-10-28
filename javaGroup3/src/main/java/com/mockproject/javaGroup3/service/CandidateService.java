@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mockproject.javaGroup3.model.Candidate;
-import com.mockproject.javaGroup3.respository.CandidateRepository;
+import com.mockproject.javaGroup3.repository.CandidateRepository;
 
 @Service
 public class CandidateService {

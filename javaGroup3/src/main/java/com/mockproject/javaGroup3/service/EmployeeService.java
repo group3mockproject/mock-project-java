@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mockproject.javaGroup3.model.Employee;
-import com.mockproject.javaGroup3.respository.EmployeeRepository;
+import com.mockproject.javaGroup3.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
@@ -29,16 +29,16 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    // Tìm employee theo ID
-    public Optional<Employee> findEmployeeById(Integer id) {
-        return employeeRepository.findById(id);
+    // Tìm employee theo employeeId
+    public Optional<Employee> findEmployeeById(Long employeeId) {
+        return employeeRepository.findById(employeeId);
     }
 
     // Cập nhật thông tin employee
-    public Optional<Employee> updateEmployee(Integer id, Employee employeeDetails) {
-        return employeeRepository.findById(id).map(employee -> {
-            employee.setFirstname(employeeDetails.getFirstname());
-            employee.setLastname(employeeDetails.getLastname());
+    public Optional<Employee> updateEmployee(Long employeeId, Employee employeeDetails) {
+        return employeeRepository.findById(employeeId).map(employee -> {
+            employee.setFirstName(employeeDetails.getFirstName());
+            employee.setLastName(employeeDetails.getLastName());
             employee.setDob(employeeDetails.getDob());
             employee.setPosition(employeeDetails.getPosition());
             employee.setEmail(employeeDetails.getEmail());
@@ -46,15 +46,13 @@ public class EmployeeService {
             employee.setSsn(employeeDetails.getSsn());
             employee.setStatus(employeeDetails.getStatus());
             employee.setPassword(employeeDetails.getPassword());
-            employee.setDelflag(employeeDetails.getDelflag());
+            employee.setDelFlag(employeeDetails.getDelFlag());
             return employeeRepository.save(employee);
         });
     }
 
-    // Xóa employee theo ID
-    public void deleteEmployee(Integer id) {
-        employeeRepository.deleteById(id);
+    // Xóa employee theo employeeId
+    public void deleteEmployee(Long employeeId) {
+        employeeRepository.deleteById(employeeId);
     }
 }
-
-

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mockproject.javaGroup3.model.EmployeeContract;
-import com.mockproject.javaGroup3.respository.EmployeeContractRepository;
+import com.mockproject.javaGroup3.repository.EmployeeContractRepository;
 
 @Service
 public class EmployeeContractService {

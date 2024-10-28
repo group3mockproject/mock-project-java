@@ -1,14 +1,15 @@
 package com.mockproject.javaGroup3.controller;
 
 import com.mockproject.javaGroup3.exception.NotFoundException;
-import com.mockproject.javaGroup3.entity.Complaint;
+import com.mockproject.javaGroup3.model.Complaint;
 import com.mockproject.javaGroup3.repository.ComplaintRepository;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/complaint")
+@RequestMapping("/api/v1/complaint")
 public class ComplaintController {
 
     private final ComplaintRepository complaintRepository;
